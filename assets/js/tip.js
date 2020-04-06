@@ -2,13 +2,14 @@
 // Get Service quality
 // Get number of people sharing the bill
 
-let billAmount = document.querySelector('#bill')
-let serviceAmount = document.querySelector('#service')
-let peopleAmount = document.querySelector('#people')
+let billAmount = document.querySelector('#bill');
+let serviceAmount = document.querySelector('#service');
+let peopleAmount = document.querySelector('#people');
 let calculateBtn = document.querySelector('#calculate');
-let tipAmount = document.querySelector('#tipAmount')
-let tipTitle = document.querySelector('#tipTitle')
-let each = document.querySelector('#each')
+let tipAmount = document.querySelector('#tipAmount');
+let tipTitle = document.querySelector('#tipTitle');
+let each = document.querySelector('#each');
+let message = document.getElementById('message');
 
 calculateBtn.addEventListener('click', function() {
   let tip = (serviceAmount.value * billAmount.value) / peopleAmount.value;
@@ -19,8 +20,9 @@ calculateBtn.addEventListener('click', function() {
   if (peopleAmount.value > 1) {
     each.textContent = 'each';
   }
-  tipTitle.textContent = 'Tip Amount'
-  tipAmount.textContent = `$${value}`
+  tipTitle.textContent = 'Tip Amount';
+  tipAmount.textContent = `$${value}`;
+  message.style.animationName = 'moveUP';
 })
 
 
